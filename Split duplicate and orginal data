@@ -1,0 +1,7 @@
+import pandas as pd
+
+df = pd.read_csv('data.csv')
+clean_df = df.dropna()
+null_df = df[~df.index.isin(clean_df.index)]
+clean_df.to_csv('clean.csv')
+null_df.to_csv('null.csv')
